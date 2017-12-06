@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>检查用户名是否重复</title>
+</head>
+<body>
+<div id="msg">
+    用户名：<input type="text" id="username"/><span id="usernameTip"></span>
+</div>
+<script src="static/jquery-1.12.4.js"></script>
+<script src="static/js/eg.js"></script>
+<script>
+
+    (function () {
+        var userName = eg.$("username");
+        var delay;
+        var delay2ajax = function () {
+            alert("用户名合法");
+            eg.$("usernameTip").innerHTML="该用户已注册！";
+        };
+
+
+        eg.addListener(userName, "keyup", function (){
+            clearTimeout(delay);
+            delay = setTimeout(delay2ajax, 800);
+        });
+    })();
+
+
+
+
+</script>
+</body>
+</html>
